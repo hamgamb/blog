@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Harlow Malloc">
+<meta name="author" content="Hamish Gamble">
 <meta name="dcterms.date" content="2024-04-15">
 
-<title>Economic-complexity - Post With Code</title>
+<title>Blog - Economic Complexity of Australian States</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -74,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Economic-complexity</span>
+    <span class="navbar-title">Blog</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -88,12 +107,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/hamgamb" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/hamish-gamble-b8b450b5/" rel="" target=""><i class="bi bi-linkedin" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -108,10 +127,8 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Post With Code</h1>
+      <h1 class="title">Economic Complexity of Australian States</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">news</div>
-                <div class="quarto-category">code</div>
                 <div class="quarto-category">analysis</div>
               </div>
                   </div>
@@ -123,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Harlow Malloc </p>
+               <p>Hamish Gamble </p>
             </div>
     </div>
       
@@ -148,11 +165,48 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>This is a post with executable code.</p>
+<section id="economic-complexity" class="level1">
+<h1>Economic Complexity</h1>
+<ul>
+<li><p>Economic complexity is a measure of the productive knowledge present in a region, based on an activity. It can be calculated based <em>comparative advantage</em> measured by:</p>
+<ul>
+<li><p>Exports by product by country</p></li>
+<li><p>Employment by industry/occupation by local government area</p></li>
+<li><p>Patents by patent class by region</p></li>
+</ul></li>
+<li><p>A region has <em>comparative advantage</em> if its share of an activity is larger than the share across all regions.</p>
+<ul>
+<li>For example, when measuring complexity by exports, a region has comparative advantage in the export of a product if the share of the regions exports in that product is greater than the share of that products exports in global trade.</li>
+</ul></li>
+<li><p>Regions and activities are ranked based on their level of complexity. Complex regions have comparative advantage in many complex activities.</p></li>
+<li><p>Economic complexity, when measured by product exports by country, is a strong predictor and driver of future economic growth, and reveals the trajectory of future growth. Countries with a higher level of complexity than their Gross Domestic Product (GDP) would predict are more likely to grow faster in the future <span class="citation" data-cites="whyise2014"><span>“Why Is Economic Complexity Important?”</span> (<a href="#ref-whyise2014" role="doc-biblioref">2014</a>)</span>.</p></li>
+<li><p>Typically, economic complexity is calculated at the national level - and a wealth of international data is available at the <a href="https://atlas.cid.harvard.edu">Atlas of Economic Complexity</a>.</p></li>
+</ul>
+<section id="economic-complexity-of-australian-states" class="level2">
+<h2 class="anchored" data-anchor-id="economic-complexity-of-australian-states">Economic complexity of Australian States</h2>
+<ul>
+<li><p>Australia’s economic complexity index has declined from a ranking of 55th in 1995 to 93rd in 2021. The high level of income relative to the low level of economic complexity means Australia is likely to grow more slowly in the future.</p></li>
+<li><p>Complexity is not distributed evenly across Australia, and each State and Territory has its own areas of specialisation.</p></li>
+<li><p>A policy response to Australia’s declining complexity should consider the complexity of Australian States.</p></li>
+</ul>
+<p>Building a model of economic complexity for Australian States requires state based commodity and services export data. Overseas exports for the Australian States is provided by the Queensland Government Statistician’s Office <span class="citation" data-cites="queensland">Office (<a href="#ref-queensland" role="doc-biblioref">2024</a>)</span>. This data set has overseas exports for 6,108 products for all States and Territories of Australia for the period 1995/95 through 2022/23. The products are classified by the Australian Harmonised Export Commodity Classification (AHECC) at an 8-digit level. Note that some products are subject to Broad Commodity Details restrictions whose export value are not assigned to any State or Territory. However, the total value of confidential items exported is reported for each State and Territory. This is consistent with the Harmonised System code <em>9999: Commodities not specified according to kind,</em> however the proportion of confidential trade at the State level than at the national level. Services data is sourced from the Australian Bureau of Statistics <span class="citation" data-cites="abs">Statistics (<a href="#ref-abs" role="doc-biblioref">2022</a>)</span>.</p>
 
 
 
-</main> <!-- /main -->
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-queensland" class="csl-entry" role="listitem">
+Office, Queensland Government Statistician’s. 2024. <span>“Overseas Exports by Commodity (8-Digit AHECC) and Country of Destination, Queensland and Other States and Territories, 2012-13 to 2022-23 (Table).”</span> 2024. <a href="https://www.qgso.qld.gov.au/issues/3536/overseas-exports-commodity-8-digit-ahecc-country-dest-qld-state-territory-201213-202223.xlsx">https://www.qgso.qld.gov.au/issues/3536/overseas-exports-commodity-8-digit-ahecc-country-dest-qld-state-territory-201213-202223.xlsx</a>.
+</div>
+<div id="ref-abs" class="csl-entry" role="listitem">
+Statistics, Australian Bureau of. 2022. <span>“International Trade: Supplementary Information, Financial Year, 2021-22.”</span> 2022. <a href="https://www.abs.gov.au/statistics/economy/international-trade/international-trade-supplementary-information-financial-year/latest-release">https://www.abs.gov.au/statistics/economy/international-trade/international-trade-supplementary-information-financial-year/latest-release</a>.
+</div>
+<div id="ref-whyise2014" class="csl-entry" role="listitem">
+<span>“Why Is Economic Complexity Important?”</span> 2014. In, 26–33. The MIT Press. <a href="https://doi.org/10.7551/mitpress/9647.003.0005">https://doi.org/10.7551/mitpress/9647.003.0005</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
