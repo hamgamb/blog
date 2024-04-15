@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: de5908be-06d5-4e66-98e4-58102aab9d8a
+      url: 'https://quiet-bavarois-d6f231.netlify.app'
