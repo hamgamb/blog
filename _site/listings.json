@@ -2,7 +2,15 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/economic-complexity-states/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/index-PC.html",
+    "items": [
       "/posts/economic-complexity/index.html",
+      "/posts/economic-complexity-states/index.html",
       "/posts/welcome/index.html"
     ]
   }
