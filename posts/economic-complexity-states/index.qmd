@@ -37,8 +37,37 @@ bibliography: references.bib
 
 Building a model of economic complexity for Australian States requires state based commodity and services export data. Overseas exports for the Australian States is provided by the Queensland Government Statistician's Office @queensland. This data set has overseas exports for 6,108 products for all States and Territories of Australia for the period 1995/96 through 2022/23. The products are classified by the Australian Harmonised Export Commodity Classification (AHECC) at an 8-digit level. Note that some products are subject to Broad Commodity Details restrictions whose export value are not assigned to any State or Territory. However, the total value of confidential items exported is reported for each State and Territory. This is consistent with the Harmonised System code *9999: Commodities not specified according to kind,* however the proportion of confidential trade at the State level than at the national level. Services data is sourced from the Australian Bureau of Statistics @abs. This data is combined with international trade data sourced from the Atlas of Economic Complexity website @atlas which has overseas exports for 5,040 products and 5 services for 251 countries over the period 1995 through 2021. The products are classified based on the 1992 revision of the Harmonised System, called HS0 at a 6-digit level.
 
+## Economic Complexity Index
+
+The economic complexity index is calculated for each year between 1996 and 2021 and shown below in @fig-eci based on the ranking of each state out of 139.
+
+```{r}
+#| label: fig-eci
+#| fig-cap: Economic complexity index and ranking, Australian states and Northern Territory
+#| fig-width: 10
+#| fig-asp: 0.7
+#| out-width: "115%"
+library(complexitydata)
+library(ecomplexity)
+
+graph_complexity_rank(state_economic_complexity)
+  
+```
+
+Low levels of economic complexity are the result of export baskets dominated by low complexity products and services. An example of this is shown in @fig-treemap-sa for South Australia.
+
+```{r}
+#| label: fig-treemap-sa
+#| fig-cap: South Australia export basket, 2020/21
+
+graph_complexity_tree(2021, "SA")
+
+```
+
 ### Data processing
 
-The international trade dataset for the Australian States and Territories is converted from the AHECC to the 1992 revision of the Harmonised System[^1]
+The international trade dataset for the Australian States and Territories is converted from the AHECC to the 1992 revision of the Harmonised System[^1] using a recursive algorithm. Export values are converted from Australian to US dollars by applying the average exchange rate over the financial year, and the data is appended to the Atlas international dataset. **Financial year data is assumed to occur within the calendar year for consistency with Atlas of Economic Complexity data.** Additionally, all products and countries not represented on the Atlas of Economic Complexity website are removed, and the Australian Capital Territory is removed from the dataset[^2].
 
 [^1]: As there are more AHECC codes than HS0 codes some information is lost when converting between the two classifications. These typically are additional Australian specific products or products of high economic importance to Australia. For example, the AHECC captures exports of *Live Australian endemic animals*. In the HS0, these are recorded simply as *Non-Farm animals*
+
+[^2]: The volume of exports from the ACT is less than \$1 billion USD per annum and considered too small for reliability.
