@@ -1,0 +1,80 @@
+---
+title: "Made in Australia"
+author: "Hamish Gamble"
+date: "2024-06-26"
+categories: [analysis]
+fig-width: 6
+fig-asp: 0.618
+fig-dpi: 300
+image: "image.jpg"
+---
+
+```{r}
+#| label: setup 
+#| 
+library(ecomplexity)
+library(readabs)
+library(tidyverse)
+library(ggplot2)
+library(reportabs)
+
+emp_ind <- read_abs("6291.0.55.001", 
+                    tables = "4", 
+                    path = "data", 
+                    check_local = TRUE)  |> 
+  separate_series(column_names = c("industry_division", "indicator")) |> 
+  mutate(industry_division = case_when(
+    is.na(industry_division) ~ "Total (industry)",
+    TRUE ~ industry_division
+  )) 
+```
+
+The Future Made in Australia agenda is a \$22.7 billion policy aimed to increase local participation in the net zero supply chain, and develop domestic capabilities in industries which can provide economic resilience and security.
+
+A country with low manufacturing capabilities, and low economic complexity like Australia, requires a directed and deliberate industry policy to create an economy that is more resilient, and more capable of addressing global challenges such as decarbonisation.
+
+## Manufacturing
+
+Total manufacturing employment in Australia
+
+```{r}
+#| label: fig-manufacturing-emp
+#| fig-cap: Manufacturing employment, Trend, Australia
+#| out-width: "70%"
+#| fig-align: 'center'
+
+
+emp_ind |>
+  filter(series_type == "Trend", 
+         industry_division == "Manufacturing")  |>
+  ggplot(aes(x = date, y = value, col = industry_division)) +
+  geom_line() +
+  theme_fof() + 
+  scale_y_continuous(labels = scales::comma_format(suffix = "k"),
+                     name = NULL) + 
+  scale_x_date(name = NULL,
+               labels = scales::date_format("%b-%Y")) +
+  scale_colour_fof()
+```
+
+```{r}
+#| label: fig-manufacturing-share
+#| fig-cap: Manufacturing employment, share of total employment, Trend, Australia
+
+emp_ind |> 
+  filter(industry_division != "Total (industry)") |> 
+  group_by(series_type, date) |>
+  mutate(share = value / sum(value)) |> ungroup() |> 
+  filter(industry_division == "Manufacturing", 
+         indicator == "Employed total",
+         series_type == "Trend") |> 
+  ggplot(aes(x = date, y = share, col = industry_division)) + 
+  geom_line() + 
+  theme_fof() +
+  scale_y_continuous(labels = scales::percent_format(),
+                     name = NULL) + 
+  scale_x_date(name = NULL,
+               labels = scales::date_format("%b-%Y")) + 
+  scale_colour_fof()
+
+```

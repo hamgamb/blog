@@ -1,0 +1,170 @@
+---
+title: "The decline of full-time employment"
+date: 4/07/2024
+editor: visual
+knitr:
+  opts_chunk: 
+    dev: "ragg_png"
+execute: 
+  echo: false
+fig-width: 6
+fig-asp: 0.618
+fig-align: center
+---
+
+```{r}
+#| label: setup
+
+library(reportabs)
+library(tidyverse)
+library(aititheme)
+library(strayr)
+
+labour_force <- read_absdata("labour_force", export_dir = "data")
+hours_worked <- read_absdata("hours_worked", export_dir = "data")
+industry_employment <- read_absdata("industry_employment", export_dir = "data")
+
+
+```
+
+The proportion of workers employed full-time has declined significantly in Australia, even over the past two decades (see @fig-full-time-proportion). Where full-time employment once comprised more than 80% of total employment, it is today below 69% . Increased economic activity and labour demand in the post pandemic period resulted in a temporary increase in full-time employment, to over 70%, a level not seen since 2010, but these gains appear to have been short lived.
+
+```{r}
+#| label: fig-full-time-proportion
+#| fig-cap: Proportion of full-time employment to total employment, Australia, Trend
+
+labour_force |> 
+  filter(indicator %in% c("Employed full-time", "Employed part-time"),
+         state == "Australia", 
+         series_type == "Trend", 
+         age == "Total (age)",
+         sex == "Persons") |> 
+  pivot_wider(names_from = indicator, 
+              id_cols = c(-series_id, - series)) |> 
+  mutate(part_time_share_total = `Employed full-time`/(`Employed full-time` + `Employed part-time`)) |> 
+  pivot_longer(cols = "Employed full-time":"part_time_share_total",
+               names_to = 'indicator',
+               values_to = "value") |> 
+  mutate(unit = ifelse(indicator == "part_time_share_total", "Percent", unit)) |> 
+  abs_plot(v = list(indicator = "part_time_share_total"),
+           years = 1999,
+           colour = "Concrete Grey",
+           legacy = TRUE) +
+  scale_y_continuous(labels = scales::percent_format())
+```
+
+While total employment has continued to increase, this has mostly been driven by increases in part-time employment.
+
+-   In January, part-time employment in Australia was `r as_comma(1000*value_at(labour_force, list(indicator = "Employed part-time", state = "Australia"), at_year = 2024, at_month = "January"))`, increasing to `r as_comma(1000*value_at(labour_force, list(indicator = "Employed part-time", state = "Australia"), at_year = 2024, at_month = "May"))` by May.
+
+-   At the same time, full-time employment increased from `r as_comma(1000*value_at(labour_force, list(indicator = "Employed full-time", state = "Australia"), at_year = 2024, at_month = "January"))` to `r as_comma(1000*value_at(labour_force, list(indicator = "Employed full-time", state = "Australia"), at_year = 2024, at_month = "May"))`.
+
+```{r}
+#| label: fig-pt-ft-employment-sa 
+#| fig-cap: Part-time and full-time employment in Australia 
+#| out-width: "70%"  
+ 
+abs_plot(labour_force, 
+         years = 2020,
+         v = list(indicator = c("Employed full-time", "Employed part-time"),                    state = "Australia"),          
+         compare_aus = FALSE, 
+         colour = "Concrete Grey",
+         legacy = TRUE) +  
+  theme(legend.position = 'bottom')    
+```
+
+The growth of part-time employment at the expense of full time employment may simply reflect individuals preferences to work part-time. However, if full-time work is desired but not available, this may reveal increasing insecurity in work.
+
+```{r}
+#| label: fig-unemployment-rate
+#| fig-cap: Unemployment rate, Australia, Trend
+
+abs_plot(labour_force,
+         legacy = TRUE,
+         v = list(indicator = c("Unemployment rate looked for full-time work", "Unemployment rate looked for only part-time work"),
+                  series_type = "Trend",
+                  state = "Australia")) +
+  theme(legend.position = "bottom") +
+  guides(col = guide_legend(nrow = 2))
+```
+
+## Industry
+
+```{r}
+#| label: fig-aus-industry
+#| fig-cap: Proportion of full-time employment to total employment, Australia, by industry
+
+# five largest industries employing in SA
+industry_large <- industry_employment |> 
+  filter(state == "Australia",
+         industry != "Total (industry)",
+         indicator == "Employed total",
+         date == max(date)) |> 
+  slice_max(value, n = 5) |>  
+  pull(industry)
+
+industry_employment |> 
+  filter(state == "Australia", 
+         industry != "Total (industry)", 
+         indicator != "Employed total")  |> 
+  inner_join(distinct(anzsic2006, anzsic_division, anzsic_division_code), 
+             by = c("industry" = "anzsic_division")) |> 
+  arrange(anzsic_division_code) |> 
+  mutate(industry = fct_inorder(industry))  |> 
+  pivot_wider(names_from = indicator,
+              values_from = value,
+              id_cols = c(date, state, series_type, industry, unit)) |> 
+  mutate(part_time_share_total = `Employed full-time`/(`Employed full-time` + `Employed part-time`)) |> 
+  pivot_longer(cols = "Employed full-time":"part_time_share_total",
+               names_to = "indicator") |>
+  filter(industry %in% industry_large) |> 
+  abs_plot(v = list(indicator = c("Employed full-time", "Employed part-time"),
+                    state = "Australia"),
+           years = 2020,
+           compare_aus = F,
+           legacy = TRUE) +
+  aes(col = indicator) 
+```
+
+## Unemployment
+
+```{r}
+
+```
+
+```{r}
+#| label: hours-worked-per-person
+
+
+hw <- hours_worked |> 
+  filter(state == "South Australia",
+         sex == "Persons", 
+         series_type == "Trend") |> 
+  pivot_wider(id_cols = c(date, sex, state, series_type),
+              values_from = value,
+              names_from = indicator)
+
+lf <- labour_force |> 
+  filter(state == "South Australia",
+         indicator == "Employed total",
+         series_type == "Trend",
+         sex == "Persons") |> 
+  pivot_wider(id_cols = c(date, sex, state, series_type),
+              values_from = value,
+              names_from = indicator)
+
+hours_worked_per_person <- inner_join(hw, lf)
+
+
+```
+
+## Sahm Recession Indicator
+
+```{r}
+#| label: fig-sahm-sa
+#| fig-cap: Sahm recession indicator, South Australia
+#| out-width: "70%"
+
+sahm("South Australia")
+
+```

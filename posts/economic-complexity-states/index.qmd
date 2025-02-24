@@ -2,6 +2,7 @@
 title: "Economic Complexity of Australian States"
 author: "Hamish Gamble"
 date: "2024-04-15"
+date-modified: "2025-02-24"
 categories: [analysis]
 image: "image.jpg"
 bibliography: references.bib
@@ -47,8 +48,8 @@ The economic complexity index is calculated for each year between 1996 and 2021 
 #| fig-width: 10
 #| fig-asp: 0.7
 #| out-width: "115%"
-library(complexitydata)
 library(ecomplexity)
+state_economic_complexity <- read_complexitydata("state_economic_complexity")
 
 graph_complexity_rank(state_economic_complexity)
   
@@ -59,14 +60,16 @@ Low levels of economic complexity are the result of export baskets dominated by 
 ```{r}
 #| label: fig-treemap-sa
 #| fig-cap: South Australia export basket, 2020/21
+#| fig-width: 8
 
-graph_complexity_tree(2021, "SA")
+
+graph_complexity_tree(state_economic_complexity, 2021, "SA")
 
 ```
 
 ### Data processing
 
-The international trade dataset for the Australian States and Territories is converted from the AHECC to the 1992 revision of the Harmonised System[^1] using a recursive algorithm. Export values are converted from Australian to US dollars by applying the average exchange rate over the financial year, and the data is appended to the Atlas international dataset. **Financial year data is assumed to occur within the calendar year for consistency with Atlas of Economic Complexity data.** Additionally, all products and countries not represented on the Atlas of Economic Complexity website are removed, and the Australian Capital Territory is removed from the dataset[^2].
+The international trade dataset for the Australian States and Territories is converted from the AHECC to the 1992 revision of the Harmonised System[^1] using a recursive algorithm. Export values are converted from Australian to US dollars by applying the average exchange rate over the financial year, and the data is appended to the Atlas international dataset. Additionally, all products and countries not represented on the Atlas of Economic Complexity website are removed, and the Australian Capital Territory is removed from the dataset[^2].
 
 [^1]: As there are more AHECC codes than HS0 codes some information is lost when converting between the two classifications. These typically are additional Australian specific products or products of high economic importance to Australia. For example, the AHECC captures exports of *Live Australian endemic animals*. In the HS0, these are recorded simply as *Non-Farm animals*
 
