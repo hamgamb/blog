@@ -1,8 +1,8 @@
 ---
-title: "About"
-image: profile.jpg
+title: "Hamish Gamble"
+image: headshot.jpg
 about:
-  template: jolla
+  template: trestles
   links:
     - icon: linkedin
       text: LinkedIn
@@ -10,7 +10,28 @@ about:
     - icon: github
       text: Github
       href: https://github.com/hamgamb
-
 ---
 
-About this blog
+I am Senior Economic Analyst at the Australian Industrial Transformation Institute at Flinders University. My research focuses on the importance of manufacturing and re-industrialisation.
+
+I like to write about economic complexity and industry policy.
+
+## Research
+
+### 2023
+
+-   [Economic Complexity - Rebuilding Industry through Innovation](https:/doi.org/10.1201/9781003393757)
+
+### 2022
+
+-   [The Circular Economy - International Lessons and Directions for Australian Re-industrialisation](https://www.flinders.edu.au/content/dam/documents/research/aiti/thecirculareconomy.pdf)
+
+-   [Innovation Procurement - Lessons for Australia](https://www.flinders.edu.au/content/dam/documents/research/aiti/aiti_innovation_procurement_report.pdf)
+
+-   [Manufacturing Transformation: high value manufacturing for the 21st Century](https://www.flinders.edu.au/content/dam/documents/research/aiti/manufacturing-transformation-high-value-manufacturing-for-the-21st-century.pdf)
+
+### 2021
+
+-   [The Australia experience. Perceptions of Australia's Working Holiday Maker (WHM) program, 2019-2020](https://www.flinders.edu.au/content/dam/documents/research/aiti/the-australia-experience-perceptions-of-australias-whm-program.pdf)
+
+-   [Australian Sovereign Capability and Supply Chain Resilience - Perspectives and Options](https://www.flinders.edu.au/content/dam/documents/research/aiti/Australian_sovereign_capability_and_supply_chain_resilience.pdf)
