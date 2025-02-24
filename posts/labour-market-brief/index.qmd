@@ -8,7 +8,6 @@ categories: [analysis]
 format: 
   pdf:
     pdf-engine: lualatex
-    output-ext: pdf
     fig-width: 6
     fig-asp: 0.618
     title: "Labour Market Brief"
@@ -16,13 +15,11 @@ format:
     documentclass: scrartcl
     papersize: letter
     mainfont: DM Sans
-
-
-
-      
   html:
     title: "Labour Market Brief"
     subtitle: "{{< meta params.state >}}"
+    fig-width: 6
+    fig-asp: 0.618
 editor: visual
 params:
   state: South Australia
