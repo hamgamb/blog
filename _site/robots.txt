@@ -1,1 +1,1 @@
-Sitemap: https://quiet-bavarois-d6f231.netlify.app/sitemap.xml
+Sitemap: https://blog.hamishgamble.com/sitemap.xml

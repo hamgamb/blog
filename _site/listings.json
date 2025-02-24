@@ -2,16 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/economic-complexity-states/index.html",
-      "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/index-PC.html",
-    "items": [
-      "/posts/economic-complexity/index.html",
-      "/posts/economic-complexity-states/index.html",
-      "/posts/welcome/index.html"
+      "/posts/labour-market-brief/index.html",
+      "/posts/made-in-aus/index.html",
+      "/posts/economic-complexity-states/index.html"
     ]
   }
 ]
