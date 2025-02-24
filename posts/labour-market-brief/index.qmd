@@ -1,6 +1,5 @@
 ---
-execute: 
-  echo: false
+
 title: "South Australia Labour Market Update"
 author: "Hamish Gamble"
 date: "2025-02-24"

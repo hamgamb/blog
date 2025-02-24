@@ -5,8 +5,6 @@ date: "2024-06-26"
 categories: [analysis]
 fig-width: 6
 fig-asp: 0.618
-fig-dpi: 300
-image: "image.jpg"
 ---
 
 ```{r}
@@ -35,7 +33,7 @@ A country with low manufacturing capabilities, and low economic complexity like 
 
 ## Manufacturing
 
-Total manufacturing employment in Australia
+Decline in manufacturing employment
 
 ```{r}
 #| label: fig-manufacturing-emp
@@ -48,6 +46,7 @@ emp_ind |>
   filter(series_type == "Trend", 
          industry_division == "Manufacturing")  |>
   ggplot(aes(x = date, y = value, col = industry_division)) +
+  labs(title = "Manufacturing Employment") +
   geom_line() +
   theme_fof() + 
   scale_y_continuous(labels = scales::comma_format(suffix = "k"),
@@ -71,6 +70,7 @@ emp_ind |>
   ggplot(aes(x = date, y = share, col = industry_division)) + 
   geom_line() + 
   theme_fof() +
+  labs(title = "Manufacturing Share of Employment") +
   scale_y_continuous(labels = scales::percent_format(),
                      name = NULL) + 
   scale_x_date(name = NULL,

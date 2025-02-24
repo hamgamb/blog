@@ -9,21 +9,21 @@
   {
     "objectID": "posts/labour-market-brief/index.html",
     "href": "posts/labour-market-brief/index.html",
-    "title": "Labour Market Brief",
+    "title": "Summary",
     "section": "",
     "text": "The ABS Labour Force Survey data for South Australia released in February for January showed that in seasonally adjusted terms:\n\nTotal employment increased by 19,906 (2.0%) to 0.97 million people.\n\nOver the past year, employment in South Australia has increased by 34,815 (3.6%).\n\nTotal unemployment increased by 466 (1.1%) to 41,821 people, and the unemployment rate decreased by 0.1 percentage points to 4.1%.\n\nOver the past year, unemployment in South Australia has increased by 2,239 (5.4%), and the unemployment rate has remained steady at 4.1%.\n\nTotal underutilisation has increased by 8,090 (7.4%) to 109,030 people, and the underutilisation rate increased by 0.6 percentage points to 10.8%.\n\nOver the past year, total underutilisation has decreased by 6,291 (-5.8%) and the underutilisation rate has decreased by 1.0 percentage points.\n\n\nNationally in January:\n\nTotal employment increased by 43,994 (0.3%) to 14.63 million people.\n\nOver the past year, employment in Australia has increased by 498,325 (3.4%).\n\nTotal unemployment increased by 23,380 (3.7%) to 627,490 people and the unemployment rate increased by 0.1 percentage points to 4.1%\n\nOver the past year, unemployment in Australia has increased by 25,060 (4.0%) and the unemployment rate has remained steady at 4.1%.\n\nTotal underutilisation increased by 29,798 (1.9%) to 1.54 million people, and the underutilisation rate increased by 0.1 percentage points to 10.1%.\n\nOver the past year, total underutilisation has decreased by 48,874 (-3.2%) and the underutilisation rate has decreased by 0.7 percentage points."
   },
   {
     "objectID": "posts/labour-market-brief/index.html#full-and-part-time-employment",
     "href": "posts/labour-market-brief/index.html#full-and-part-time-employment",
-    "title": "Labour Market Brief",
+    "title": "Summary",
     "section": "Full and Part Time Employment",
     "text": "Full and Part Time Employment\n\nFull-time employment in South Australia increased by 5,307 (0.8%) to 632,179 in January, and has increased by 19,380 (3.1%) over the year.\nPart-time employment in South Australia, in original terms increased by 14,599 (4.3%) to 339,691 in January. Part-time employment has increased by 15,435 (4.5%) over the last year."
   },
   {
     "objectID": "posts/labour-market-brief/index.html#male-and-female-unemployment-rates",
     "href": "posts/labour-market-brief/index.html#male-and-female-unemployment-rates",
-    "title": "Labour Market Brief",
+    "title": "Summary",
     "section": "Male and Female Unemployment Rates",
     "text": "Male and Female Unemployment Rates\n\nIn January, the seasonally adjusted unemployment rate for males in South Australia decreased by 0.6 percentage points to 4.4%.\nCompared with January last year male unemployment in South Australia has increased by 0.3 percentage points.\nIn the same period, the seasonally adjusted unemployment rate for females in increased by 0.6 percentage points to 3.8%.\nCompared with January last year female unemployment in South Australia has decreased by 0.2 percentage points."
   },
@@ -32,7 +32,7 @@
     "href": "index.html",
     "title": "Blog Posts",
     "section": "",
-    "text": "Labour Market Brief\n\n\n\n\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nFeb 24, 2025\n\n\nHamish Gamble\n\n\n\n\n\n\n\n\n\n\n\n\nMade in Australia\n\n\n\n\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nJun 26, 2024\n\n\nHamish Gamble\n\n\n\n\n\n\n\n\n\n\n\n\nEconomic Complexity of Australian States\n\n\n\n\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\nHamish Gamble\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nApr 12, 2024\n\n\nHamish Gamble\n\n\n\n\n\n\nNo matching items"
+    "text": "state: South Australia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMade in Australia\n\n\n\n\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nJun 26, 2024\n\n\nHamish Gamble\n\n\n\n\n\n\n\n\n\n\n\n\nEconomic Complexity of Australian States\n\n\n\n\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nApr 15, 2024\n\n\nHamish Gamble\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nApr 12, 2024\n\n\nHamish Gamble\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -88,6 +88,6 @@
     "href": "posts/made-in-aus/index.html#manufacturing",
     "title": "Made in Australia",
     "section": "Manufacturing",
-    "text": "Manufacturing\nTotal manufacturing employment in Australia\n\n\n\n\n\n\n\n\nFigure 1: Manufacturing employment, Trend, Australia\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Manufacturing employment, share of total employment, Trend, Australia"
+    "text": "Manufacturing\nDecline in manufacturing employment\n\n\n\n\n\n\n\n\nFigure 1: Manufacturing employment, Trend, Australia\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Manufacturing employment, share of total employment, Trend, Australia"
   }
 ]
