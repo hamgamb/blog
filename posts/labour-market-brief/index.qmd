@@ -1,28 +1,28 @@
 ---
-
-title: "South Australia Labour Market Update"
-author: "Hamish Gamble"
-date: "2025-02-24"
-categories: [analysis]
+title: "South Australia Labour Market Update" 
+author: "Hamish Gamble" 
+date: "2025-02-24" 
+categories: [analysis] 
 format: 
-  pdf:
-    pdf-engine: lualatex
-    fig-width: 6
-    fig-asp: 0.618
+  pdf: 
+    pdf-engine: lualatex 
+    fig-width: 6 
+    fig-asp: 0.618 
+    title: "Labour Market Brief" 
+    subtitle: "{{< meta params.state >}}" 
+    documentclass: scrartcl 
+    papersize: letter 
+    mainfont: DM Sans 
+  html: 
     title: "Labour Market Brief"
-    subtitle: "{{< meta params.state >}}"
-    documentclass: scrartcl
-    papersize: letter
-    mainfont: DM Sans
-  html:
-    title: "Labour Market Brief"
-    subtitle: "{{< meta params.state >}}"
-    fig-width: 6
-    fig-asp: 0.618
-editor: visual
-params:
+    subtitle: "{{< meta params.state >}}" 
+    fig-width: 6 
+    fig-asp: 0.618 
+params: 
   state: South Australia
 ---
+
+
 
 ```{r}
 #| label: setup

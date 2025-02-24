@@ -3,7 +3,7 @@ title: "Made in Australia"
 author: "Hamish Gamble"
 date: "2024-06-26"
 categories: [analysis]
-fig-width: 6
+fig-width: 4
 fig-asp: 0.618
 ---
 
@@ -15,6 +15,7 @@ library(readabs)
 library(tidyverse)
 library(ggplot2)
 library(reportabs)
+knitr::opts_chunk$set(dev.args = list(png = list(type = "cairo")))
 
 emp_ind <- read_abs("6291.0.55.001", 
                     tables = "4", 
@@ -59,6 +60,8 @@ emp_ind |>
 ```{r}
 #| label: fig-manufacturing-share
 #| fig-cap: Manufacturing employment, share of total employment, Trend, Australia
+#| out-width: "70%"
+#| fig-align: "center"
 
 emp_ind |> 
   filter(industry_division != "Total (industry)") |> 
